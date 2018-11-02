@@ -1,0 +1,11 @@
+{
+    "id": "hEzipgDl",
+    "code": "invalid_request",
+    "status": 400,
+    "detail": "value of type must be one of \"hairsalon\", \"nail\", \"specialist\" but got value \"hairsalo\"",
+    "meta": {
+        "attribute": "type",
+        "expected": "\"hairsalon\", \"nail\", \"specialist\"",
+        "value": "hairsalo"
+    }
+}
