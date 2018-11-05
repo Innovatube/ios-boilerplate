@@ -1,0 +1,153 @@
+PODS:
+  - Action (3.8.0):
+    - RxCocoa (~> 4.3.0)
+    - RxSwift (~> 4.3.0)
+  - Alamofire (4.7.3)
+  - Differentiator (3.1.0)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - HyperioniOS/AttributesInspector (1.0.2):
+    - HyperioniOS/Core
+  - HyperioniOS/Core (1.0.2)
+  - HyperioniOS/Measurements (1.0.2):
+    - HyperioniOS/Core
+  - HyperioniOS/SlowAnimations (1.0.2):
+    - HyperioniOS/Core
+  - iOSSnapshotTestCase (4.0.0):
+    - iOSSnapshotTestCase/SwiftSupport (= 4.0.0)
+  - iOSSnapshotTestCase/Core (4.0.0)
+  - iOSSnapshotTestCase/SwiftSupport (4.0.0):
+    - iOSSnapshotTestCase/Core
+  - KeychainAccess (3.1.2)
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya-ObjectMapper/Core (2.7):
+    - Moya (~> 11)
+    - ObjectMapper (~> 3.3)
+  - Moya-ObjectMapper/RxSwift (2.7):
+    - Moya-ObjectMapper/Core
+    - RxSwift (~> 4.1)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (11.0.2):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - Nimble (7.3.1)
+  - Nimble-Snapshots (6.9.0):
+    - Nimble-Snapshots/Core (= 6.9.0)
+  - Nimble-Snapshots/Core (6.9.0):
+    - iOSSnapshotTestCase (~> 4.0)
+    - Nimble (~> 7.0)
+  - ObjectMapper (3.3.0)
+  - Quick (1.3.2)
+  - R.swift (5.0.0.alpha.2):
+    - R.swift.Library (~> 5.0.0.alpha.2)
+  - R.swift.Library (5.0.0.alpha.2)
+  - ReachabilitySwift (4.3.0)
+  - Result (3.2.4)
+  - RxBlocking (4.3.1):
+    - RxSwift (~> 4.0)
+  - RxCocoa (4.3.1):
+    - RxSwift (~> 4.0)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxOptional (3.5.0):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.3.1)
+  - RxSwiftExt (3.3.0):
+    - RxSwiftExt/Core (= 3.3.0)
+  - RxSwiftExt/Core (3.3.0):
+    - RxSwift (~> 4.0)
+  - RxTest (4.3.1):
+    - RxSwift (~> 4.0)
+  - SwiftLint (0.27.0)
+
+DEPENDENCIES:
+  - Action (~> 3.0)
+  - FBSnapshotTestCase
+  - HyperioniOS/AttributesInspector
+  - HyperioniOS/Core
+  - HyperioniOS/Measurements
+  - HyperioniOS/SlowAnimations
+  - KeychainAccess
+  - Moya-ObjectMapper/RxSwift (~> 2.5)
+  - Moya/RxSwift (~> 11.0)
+  - Nimble
+  - Nimble-Snapshots
+  - ObjectMapper (~> 3.0)
+  - Quick
+  - R.swift (~> 5.0.0.alpha.2)
+  - ReachabilitySwift (~> 4.1)
+  - RxBlocking (~> 4.0)
+  - RxDataSources (~> 3.0)
+  - RxOptional (~> 3.1)
+  - RxSwift (~> 4.0)
+  - RxSwiftExt (~> 3.0)
+  - RxTest (~> 4.0)
+  - SwiftLint (~> 0.27)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Action
+    - Alamofire
+    - Differentiator
+    - FBSnapshotTestCase
+    - HyperioniOS
+    - iOSSnapshotTestCase
+    - KeychainAccess
+    - Moya
+    - Moya-ObjectMapper
+    - Nimble
+    - Nimble-Snapshots
+    - ObjectMapper
+    - Quick
+    - R.swift
+    - R.swift.Library
+    - ReachabilitySwift
+    - Result
+    - RxBlocking
+    - RxCocoa
+    - RxDataSources
+    - RxOptional
+    - RxSwift
+    - RxSwiftExt
+    - RxTest
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Action: 2275d04a407ecaf46a58d58a304388a28155a0a1
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  HyperioniOS: 2397937925b2d57ec28182ac979879b0da2658ee
+  iOSSnapshotTestCase: 711379b19f69a22c131527df862352c877c2773c
+  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Moya-ObjectMapper: 441caa307b527331fde59e2577adc632a16f1255
+  Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
+  Nimble-Snapshots: 79394f8d0aea3df54bd5ff78ee9dff05a523a09c
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
+  R.swift: 31fa1bd537fa81307815cc622122f33331f32174
+  R.swift.Library: 3c21b823839bf5a6769dc7f96cb44479dab51b1b
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxBlocking: 64c051285261ca2339481e91b5f70eb06b03660a
+  RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxOptional: bd32ff8ca9df4177683d56ffeb618a9d4d5d5cad
+  RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
+  RxSwiftExt: 81afb48ab0602f503147417baeb3989d64c7687d
+  RxTest: ea97a208826906f3904c0debdd09575ebcbfe216
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+
+PODFILE CHECKSUM: 7472286368eed12234a21d68d9284a3fdfb126bc
+
+COCOAPODS: 1.5.3

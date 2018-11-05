@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Concrete</key>
+	<true/>
+	<key>ProjectOnly</key>
+	<true/>
+	<key>Identifier</key>
+	<string>com.nexus.template.iosBase.cleanArchitecture</string>
+	<key>Description</key>
+	<string>This template provides a starting point for an application that uses a single view. It provides a view controller to manage the view, and a storyboard or nib file that contains the view.</string>
+	<key>Platforms</key>
+	<array>
+		<string>com.apple.platform.iphoneos</string>
+	</array>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.iosBase</string>
+		<string>com.innovatube.template.unit.bundleBase</string>
+	</array>
+	<key>Components</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>com.nexus.template.iosBase.cleanArchitecture.domainFramework</string>
+			<key>Name</key>
+			<string>Domain</string>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>com.nexus.template.iosBase.cleanArchitecture.networkPlatformFramework</string>
+			<key>Name</key>
+			<string>NetworkPlatform</string>
+		</dict>
+	</array>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>ProductType</key>
+			<string>com.apple.product-type.application</string>
+			<key>TargetIdentifier</key>
+			<string>com.apple.dt.cocoaTouchApplicationTarget</string>
+			<key>BuildPhases</key>
+			<array>
+				<dict>
+					<key>Class</key>
+					<string>ShellScript</string>
+					<key>Name</key>
+					<string>SwiftLint</string>
+					<key>ShellPath</key>
+					<string>/bin/sh</string>
+					<key>ShellScript</key>
+					<string>&quot;${PODS_ROOT}/SwiftLint/swiftlint&quot;</string>
+				</dict>
+			</array>
+			<key>SharedSettings</key>
+			<dict>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>$(PROJECT_NAME)/Application/___PACKAGENAMEASIDENTIFIER___-Bridging-Header.h</string>
+			</dict>
+		</dict>
+	</array>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>UnitTests</string>
+			<key>Name</key>
+			<string>Include Unit Tests</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>SortOrder</key>
+			<integer>100</integer>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>Default</key>
+			<string>true</string>
+			<key>Units</key>
+			<dict>
+				<key>true</key>
+				<dict>
+					<key>Components</key>
+					<array>
+						<dict>
+							<key>Identifier</key>
+							<string>com.apple.dt.unit.cocoaTouchUnitTestBundle</string>
+							<key>Name</key>
+							<string>___PACKAGENAME___Tests</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>UITests</string>
+			<key>Name</key>
+			<string>Include UI Tests</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>SortOrder</key>
+			<integer>101</integer>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>Default</key>
+			<string>true</string>
+			<key>Units</key>
+			<dict>
+				<key>true</key>
+				<dict>
+					<key>Components</key>
+					<array>
+						<dict>
+							<key>Identifier</key>
+							<string>com.apple.dt.unit.cocoaTouchUITestingBundle</string>
+							<key>Name</key>
+							<string>___PACKAGENAME___UITests</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Language:</string>
+			<key>Description</key>
+			<string>What kind of response type to create</string>
+			<key>Default</key>
+			<string>Swift</string>
+			<key>Values</key>
+			<array>
+				<string>Swift</string>
+			</array>
+			<key>Units</key>
+			<dict>
+				<key>Swift</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>../.swiftlint.yml</key>
+						<dict>
+							<key>TargetIndices</key>
+							<array/>
+							<key>Path</key>
+							<string>.swiftlint.yml</string>
+						</dict>
+						<key>../Podfile</key>
+						<dict>
+							<key>TargetIndices</key>
+							<array/>
+							<key>Beginning</key>
+							<string># Uncomment the next line to define a global platform for your project
+platform :ios, &apos;10.0&apos;
+
+def shared_pods
+    
+    # Reactive
+    pod &apos;RxSwift&apos;, &apos;~&gt; 4.0&apos;
+    pod &apos;Action&apos;, &apos;~&gt; 3.0&apos;
+    pod &apos;RxSwiftExt&apos;, &apos;~&gt; 3.0&apos;
+    pod &apos;RxOptional&apos;, &apos;~&gt; 3.1&apos;
+    pod &apos;RxDataSources&apos;, &apos;~&gt; 3.0&apos;
+    
+    # Style and conventions
+    pod &apos;SwiftLint&apos;, &apos;~&gt; 0.27&apos;
+
+    pod &apos;R.swift&apos;, &apos;~&gt; 5.0.0.alpha.2&apos;
+end
+
+def testing_pods
+    pod &apos;Quick&apos;
+    pod &apos;Nimble&apos;
+    pod &apos;Nimble-Snapshots&apos;
+    pod &apos;RxBlocking&apos;, &apos;~&gt; 4.0&apos;
+    pod &apos;RxTest&apos;,     &apos;~&gt; 4.0&apos;
+end
+
+def testing_pods
+    pod &apos;Quick&apos;
+    pod &apos;Nimble&apos;
+    pod &apos;Nimble-Snapshots&apos;
+    pod &apos;FBSnapshotTestCase&apos;
+    pod &apos;RxBlocking&apos;, &apos;~&gt; 4.0&apos;
+    pod &apos;RxTest&apos;,     &apos;~&gt; 4.0&apos;
+end
+
+target &apos;___VARIABLE_productName___&apos; do
+    use_frameworks!
+    inhibit_all_warnings!
+
+  # Pods for ___VARIABLE_productName___
+    shared_pods
+
+    pod &apos;HyperioniOS/Core&apos;, :configurations =&gt; [&apos;Debug&apos;]
+
+    #&quot;Configurations =&gt; Debug&quot; ensures it is only included in debug builds. Add any configurations you would like Hyperion to be included in.
+    pod &apos;HyperioniOS/AttributesInspector&apos;, :configurations =&gt; [&apos;Debug&apos;] # Optional plugin
+    pod &apos;HyperioniOS/Measurements&apos;, :configurations =&gt; [&apos;Debug&apos;] # Optional plugin
+    pod &apos;HyperioniOS/SlowAnimations&apos;, :configurations =&gt; [&apos;Debug&apos;] # Optional plugin
+
+    post_install do |installer|
+        installer.pods_project.targets.each do |target|
+            if target.name == &apos;RxSwift&apos;
+                target.build_configurations.each do |config|
+                    if config.name == &apos;Debug&apos;
+                        config.build_settings[&apos;OTHER_SWIFT_FLAGS&apos;] ||= [&apos;-D&apos;, &apos;TRACE_RESOURCES&apos;]
+                    end
+                end
+            end
+        end
+    end
+
+    target &apos;___VARIABLE_productName___Tests&apos; do
+        inherit! :search_paths
+        # Pods for testing
+        testing_pods
+
+    end
+
+    target &apos;___VARIABLE_productName___UITests&apos; do
+        inherit! :search_paths
+        # Pods for testing
+
+    end
+
+end
+
+target &apos;Domain&apos; do
+    use_frameworks!
+    inhibit_all_warnings!
+
+    # Pods for Domain
+    shared_pods
+
+    target &apos;DomainTests&apos; do
+        inherit! :search_paths
+
+        testing_pods
+    end
+end
+
+target &apos;NetworkPlatform&apos; do
+    use_frameworks!
+    inhibit_all_warnings!
+
+    # Pods for NetworkPlatform
+    shared_pods
+    pod &apos;Moya/RxSwift&apos;, &apos;~&gt; 11.0&apos;
+    pod &apos;ObjectMapper&apos;, &apos;~&gt; 3.0&apos;
+    pod &apos;Moya-ObjectMapper/RxSwift&apos;, &apos;~&gt; 2.5&apos;
+    pod &apos;ReachabilitySwift&apos;, &apos;~&gt; 4.1&apos;
+    
+    # KeychainAccess
+    pod &apos;KeychainAccess&apos;
+
+    target &apos;NetworkPlatformTests&apos; do
+        inherit! :search_paths
+
+        testing_pods
+    end
+end
+</string>
+							<key>End</key>
+							<string></string>
+						</dict>
+						<key>Info.plist</key>
+						<dict>
+							<key>Group</key>
+							<string>Application</string>
+							<key>Path</key>
+							<string>Swift/Application/Info.plist</string>
+							<key>TargetIndices</key>
+							<array/>
+						</dict>
+						<key>Application/AppDelegate.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Application/AppDelegate.swift</string>
+							<key>Group</key>
+							<string>Application</string>
+						</dict>
+						<key>Application/___PACKAGENAMEASIDENTIFIER___-Bridging-Header.h</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Application/___PACKAGENAMEASIDENTIFIER___-Bridging-Header.h</string>
+							<key>Group</key>
+							<string>Application</string>
+						</dict>
+						<key>Extensions/SwiftStdlib/DateExtensions.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Extensions/SwiftStdlib/DateExtensions.swift</string>
+							<key>Group</key>
+							<array>
+								<string>Extensions</string>
+								<string>SwiftStdlib</string>
+							</array>
+						</dict>
+						<key>Extensions/SwiftStdlib/StringExtensions.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Extensions/SwiftStdlib/StringExtensions.swift</string>
+							<key>Group</key>
+							<array>
+								<string>Extensions</string>
+								<string>SwiftStdlib</string>
+							</array>
+						</dict>
+						<key>Extensions/UIKit/UICollectionViewExtensions.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Extensions/UIKit/UICollectionViewExtensions.swift</string>
+							<key>Group</key>
+							<array>
+								<string>Extensions</string>
+								<string>UIKit</string>
+							</array>
+						</dict>
+						<key>Extensions/UIKit/UIImageViewExtensions.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Extensions/UIKit/UIImageViewExtensions.swift</string>
+							<key>Group</key>
+							<array>
+								<string>Extensions</string>
+								<string>UIKit</string>
+							</array>
+						</dict>
+						<key>Extensions/UIKit/UIColorExtensions.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Extensions/UIKit/UIColorExtensions.swift</string>
+							<key>Group</key>
+							<array>
+								<string>Extensions</string>
+								<string>UIKit</string>
+							</array>
+						</dict>
+						<key>Extensions/UIKit/UITableViewExtensions.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Extensions/UIKit/UITableViewExtensions.swift</string>
+							<key>Group</key>
+							<array>
+								<string>Extensions</string>
+								<string>UIKit</string>
+							</array>
+						</dict>
+						<key>Extensions/UIKit/UITextFieldExtensions.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Extensions/UIKit/UITextFieldExtensions.swift</string>
+							<key>Group</key>
+							<array>
+								<string>Extensions</string>
+								<string>UIKit</string>
+							</array>
+						</dict>
+						<key>Extensions/UIKit/UIWindowExtensions.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Extensions/UIKit/UIWindowExtensions.swift</string>
+							<key>Group</key>
+							<array>
+								<string>Extensions</string>
+								<string>UIKit</string>
+							</array>
+						</dict>
+						<key>Extensions/Reactive/ReactiveCollectionViewCell.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Extensions/Reactive/ReactiveCollectionViewCell.swift</string>
+							<key>Group</key>
+							<array>
+								<string>Extensions</string>
+								<string>Reactive</string>
+							</array>
+						</dict>
+						<key>Extensions/Reactive/ReactiveTableViewCell.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Extensions/Reactive/ReactiveTableViewCell.swift</string>
+							<key>Group</key>
+							<array>
+								<string>Extensions</string>
+								<string>Reactive</string>
+							</array>
+						</dict>
+						<key>Scenes/ViewController.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Scenes/ViewController.swift</string>
+							<key>Group</key>
+							<array>
+								<string>Scenes</string>
+							</array>
+						</dict>
+						<key>Scenes/ApplicationNavigationController.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Scenes/ApplicationNavigationController.swift</string>
+							<key>Group</key>
+							<array>
+								<string>Scenes</string>
+							</array>
+						</dict>
+						<key>Resources/Fonts</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Resources/Fonts</string>
+							<key>Group</key>
+							<array>
+								<string>Resources</string>
+								<string>Fonts</string>
+							</array>
+						</dict>
+						<key>Resources/Base.lproj/Storyboard/LaunchScreen.storyboard</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Resources/Base.lproj/LaunchScreen.storyboard</string>
+							<key>Group</key>
+							<array>
+								<string>Resources</string>
+								<string>Storyboards</string>
+							</array>
+						</dict>
+						<key>Resources/Base.lproj/Storyboard/Main.storyboard</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Resources/Base.lproj/Main.storyboard</string>
+							<key>Group</key>
+							<array>
+								<string>Resources</string>
+								<string>Storyboards</string>
+							</array>
+						</dict>
+						<key>Resources/Strings</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Resources/Strings</string>
+							<key>Group</key>
+							<array>
+								<string>Resources</string>
+								<string>Strings</string>
+							</array>
+						</dict>
+						<key>Resources/Assets.xcassets</key>
+						<dict>
+							<key>Path</key>
+							<string>Swift/Resources/Assets.xcassets</string>
+							<key>Group</key>
+							<array>
+								<string>Resources</string>
+							</array>
+						</dict>
+						<key>Info.plist:iPhone</key>
+						<string>&lt;key&gt;LSRequiresIPhoneOS&lt;/key&gt;&lt;true/&gt;</string>
+						<key>Info.plist:LaunchScreen</key>
+						<string>&lt;key&gt;UILaunchStoryboardName&lt;/key&gt;&lt;string&gt;LaunchScreen&lt;/string&gt;</string>
+						<key>Info.plist:UIRequiredDeviceCapabilities</key>
+						<dict>
+							<key>Beginning</key>
+							<string>&lt;key&gt;UIRequiredDeviceCapabilities&lt;/key&gt;&lt;array&gt;</string>
+							<key>End</key>
+							<string>&lt;/array&gt;</string>
+							<key>Indent</key>
+							<integer>1</integer>
+						</dict>
+						<key>Info.plist:UIRequiredDeviceCapabilities:base</key>
+						<string>&lt;string&gt;armv7&lt;/string&gt;</string>
+						<key>Info.plist:LSApplicationQueriesSchemes</key>
+						<dict>
+							<key>Beginning</key>
+							<string>&lt;key&gt;LSApplicationQueriesSchemes&lt;/key&gt;&lt;array&gt;</string>
+							<key>End</key>
+							<string>&lt;/array&gt;</string>
+							<key>Indent</key>
+							<integer>1</integer>
+						</dict>
+						<key>Info.plist:NSCameraUsageDescription</key>
+						<string>&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;&lt;string&gt;Camera Usage Description&lt;/string&gt;</string>
+						<key>Info.plist:NSPhotoLibraryUsageDescription</key>
+						<string>&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;&lt;string&gt;Photo Library Usage Description&lt;/string&gt;</string>
+						<key>Info.plist:NSAppTransportSecurity</key>
+						<string>&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;
+							&lt;dict&gt;
+								&lt;key&gt;NSAllowsArbitraryLoads&lt;/key&gt;
+								&lt;true/&gt;
+							&lt;/dict&gt;
+						</string>
+						<key>Info.plist:UIViewControllerBasedStatusBarAppearance</key>
+						<string>&lt;key&gt;UIViewControllerBasedStatusBarAppearance&lt;/key&gt;&lt;false/&gt;</string>
+					</dict>
+					<key>Nodes</key>
+					<array>
+						<string>../.swiftlint.yml</string>
+						<string>../Podfile</string>
+						<string>Info.plist:NSPhotoLibraryUsageDescription</string>
+						<string>Info.plist:NSCameraUsageDescription</string>
+						<string>Info.plist:NSAppTransportSecurity</string>
+						<string>Info.plist:CFBundleURLTypes</string>
+						<string>Info.plist:LaunchScreen</string>
+						<string>Info.plist:iPhone</string>
+						<string>Info.plist:UIViewControllerBasedStatusBarAppearance</string>
+						<string>Info.plist</string>
+						<string>Application/AppDelegate.swift</string>
+						<string>Application/___PACKAGENAMEASIDENTIFIER___-Bridging-Header.h</string>
+						<string>Extensions/SwiftStdlib/DateExtensions.swift</string>
+						<string>Extensions/SwiftStdlib/StringExtensions.swift</string>
+						<string>Extensions/UIKit/UICollectionViewExtensions.swift</string>
+						<string>Extensions/UIKit/UIImageViewExtensions.swift</string>
+						<string>Extensions/UIKit/UIColorExtensions.swift</string>
+						<string>Extensions/UIKit/UITableViewExtensions.swift</string>
+						<string>Extensions/UIKit/UITextFieldExtensions.swift</string>
+						<string>Extensions/UIKit/UIWindowExtensions.swift</string>
+						<string>Extensions/Reactive/ReactiveCollectionViewCell.swift</string>
+						<string>Extensions/Reactive/ReactiveTableViewCell.swift</string>
+						<string>Scenes/ApplicationNavigationController.swift</string>
+						<string>Scenes/ViewController.swift</string>
+						<string>StubbedResponses</string>
+						<string>Resources/Fonts</string>
+						<string>Resources/Strings</string>
+						<string>Resources/Assets.xcassets</string>
+						<string>Resources/Base.lproj/Storyboard/Main.storyboard</string>
+						<string>Resources/Base.lproj/Storyboard/LaunchScreen.storyboard</string>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

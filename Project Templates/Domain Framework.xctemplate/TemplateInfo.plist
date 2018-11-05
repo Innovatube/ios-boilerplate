@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.nexus.template.iosBase.cleanArchitecture.domainFramework</string>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.frameworkBase</string>
+		<string>com.apple.dt.unit.iosBase</string>
+	</array>
+	<key>Concrete</key>
+	<false/>
+	<key>Description</key>
+	<string>This template creates a framework that uses UIKit.</string>
+	<key>SortOrder</key>
+	<integer>1</integer>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>TargetIdentifier</key>
+			<string>com.apple.dt.cocoaTouchLibraryOrFrameworkTarget</string>
+			<key>SharedSettings</key>
+			<dict>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+			</dict>
+		</dict>
+	</array>
+	<key>Components</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>com.apple.dt.unit.cocoaTouchFrameworkUnitTestBundle</string>
+			<key>Name</key>
+			<string>___PACKAGENAME___Tests</string>
+		</dict>
+	</array>
+	<key>Definitions</key>
+	<dict>
+		<key>___TARGETNAME:c99ExtIdentifier___.h</key>
+		<dict>
+			<key>TargetIdentifiers</key>
+			<array>
+				<string>com.apple.dt.cocoaTouchLibraryOrFrameworkTarget</string>
+			</array>
+			<key>BuildAttributes</key>
+			<array>
+				<string>Public</string>
+			</array>
+		</dict>
+		<key>Entities</key>
+		<dict>
+			<key>Path</key>
+			<string>Swift/Entities</string>
+			<key>PathType</key>
+			<string>Group</string>
+			<key>Group</key>
+			<array>
+				<string>Entities</string>
+			</array>
+		</dict>
+		<key>UseCases</key>
+		<dict>
+			<key>Path</key>
+			<string>Swift/UseCases</string>
+			<key>PathType</key>
+			<string>Group</string>
+			<key>Group</key>
+			<array>
+				<string>UseCases</string>
+			</array>
+		</dict>
+	</dict>
+	<key>Nodes</key>
+	<array>
+		<string>Entities</string>
+		<string>UseCases</string>
+	</array>
+</dict>
+</plist>

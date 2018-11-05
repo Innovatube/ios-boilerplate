@@ -1,0 +1,111 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '10.0'
+
+def shared_pods
+    
+    # Reactive
+    pod 'RxSwift', '~> 4.0'
+    pod 'Action', '~> 3.0'
+    pod 'RxSwiftExt', '~> 3.0'
+    pod 'RxOptional', '~> 3.1'
+    pod 'RxDataSources', '~> 3.0'
+    
+    # Style and conventions
+    pod 'SwiftLint', '~> 0.27'
+
+    pod 'R.swift', '~> 5.0.0.alpha.2'
+end
+
+def testing_pods
+    pod 'Quick'
+    pod 'Nimble'
+    pod 'Nimble-Snapshots'
+    pod 'RxBlocking', '~> 4.0'
+    pod 'RxTest',     '~> 4.0'
+end
+
+def testing_pods
+    pod 'Quick'
+    pod 'Nimble'
+    pod 'Nimble-Snapshots'
+    pod 'FBSnapshotTestCase'
+    pod 'RxBlocking', '~> 4.0'
+    pod 'RxTest',     '~> 4.0'
+end
+
+target 'Final' do
+    use_frameworks!
+    inhibit_all_warnings!
+
+  # Pods for Final
+    shared_pods
+
+    pod 'HyperioniOS/Core', :configurations => ['Debug']
+
+    #"Configurations => Debug" ensures it is only included in debug builds. Add any configurations you would like Hyperion to be included in.
+    pod 'HyperioniOS/AttributesInspector', :configurations => ['Debug'] # Optional plugin
+    pod 'HyperioniOS/Measurements', :configurations => ['Debug'] # Optional plugin
+    pod 'HyperioniOS/SlowAnimations', :configurations => ['Debug'] # Optional plugin
+
+    post_install do |installer|
+        installer.pods_project.targets.each do |target|
+            if target.name == 'RxSwift'
+                target.build_configurations.each do |config|
+                    if config.name == 'Debug'
+                        config.build_settings['OTHER_SWIFT_FLAGS'] ||= ['-D', 'TRACE_RESOURCES']
+                    end
+                end
+            end
+        end
+    end
+
+    target 'FinalTests' do
+        inherit! :search_paths
+        # Pods for testing
+        testing_pods
+
+    end
+
+    target 'FinalUITests' do
+        inherit! :search_paths
+        # Pods for testing
+
+    end
+
+end
+
+target 'Domain' do
+    use_frameworks!
+    inhibit_all_warnings!
+
+    # Pods for Domain
+    shared_pods
+
+    target 'DomainTests' do
+        inherit! :search_paths
+
+        testing_pods
+    end
+end
+
+target 'NetworkPlatform' do
+    use_frameworks!
+    inhibit_all_warnings!
+
+    # Pods for NetworkPlatform
+    shared_pods
+    pod 'Moya/RxSwift', '~> 11.0'
+    pod 'ObjectMapper', '~> 3.0'
+    pod 'Moya-ObjectMapper/RxSwift', '~> 2.5'
+    pod 'ReachabilitySwift', '~> 4.1'
+    
+    # KeychainAccess
+    pod 'KeychainAccess'
+
+    target 'NetworkPlatformTests' do
+        inherit! :search_paths
+
+        testing_pods
+    end
+end
+
